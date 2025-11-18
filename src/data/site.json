@@ -1,19 +1,13 @@
 {
-  "name": "Eleventy Duo",
-  "description": "Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs.",
-  "url": "https://eleventyduo.netlify.app",
+  "name": "Ryan Carver",
+  "description": "The personal website of Ryan Carver",
+  "url": "https://www.ryancarver.com",
   "author": {
-    "name": "Author Name",
-    "email": "author@site.com",
-    "twitterHandle": "author_handle"
+    "name": "Ryan Carver",
+    "email": "ryan@ryancarver.com"
   },
-  "defaultSocialImage": "/images/default-social-image.png",
+  "defaultSocialImage": "/images/me.png",
   "headerLinks": [
-    {
-      "text": "Blog",
-      "url": "/blog",
-      "external": false
-    },
     {
       "text": "About",
       "url": "/about",
@@ -22,18 +16,18 @@
   ],
   "socialLinks": [
     {
-      "text": "Instagram",
-      "url": "https://instagram.com/",
-      "external": true
-    },
-    {
       "text": "GitHub",
-      "url": "https://github.com/yinkakun/eleventy-duo",
+      "url": "https://github.com/rcarver",
       "external": true
     },
     {
-      "text": "Twitter",
-      "url": "https://twitter.com/",
+      "text": "Mastodon",
+      "url": "https://mastodon.social/@rcarver",
+      "external": true
+    },
+    {
+      "text": "LinkedIn",
+      "url": "https://linkedin.com/in/ryan-carver",
       "external": true
     }
   ],

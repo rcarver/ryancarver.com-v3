@@ -1,8 +1,6 @@
 ---
 layout: home
-title: 'Eleventy Duo'
+title: 'Ryan Carver'
 ---
 
-# Hello World
-
-Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs. Checkout the [project's github repo](https://github.com/yinkakun/eleventy-duo) for more info.
+Hi, I'm a software developer based in Berkeley, California. I make creative tools for creative people.
