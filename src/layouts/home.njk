@@ -5,12 +5,13 @@ layout: base
 {% include "page-header.njk" %}
 
 <div class="home">
-  {% if posts %}
+  {% set postslist = collections.posts %}
+  {% if postslist.length > 0 %}
     <div class="home__posts">
-      {% for post in posts %}
+      {% for post in postslist | reverse %}
         <article class="home__post">
-          <h2 class="home__post-title">{{ post.title }}</h2>
-          <p class="home__post-content">{{ post.content }}</p>
+          <h2 class="home__post-title">{{ post.data.title }}</h2>
+          <div class="home__post-content">{{ post.templateContent | safe }}</div>
         </article>
       {% endfor %}
     </div>
