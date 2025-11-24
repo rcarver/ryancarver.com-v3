@@ -1,7 +1,7 @@
 ---
-title: About Ryan Carver
+title: About
 layout: about.njk
-name: Ryan Carver
+name: About Ryan Carver
 image: '/images/me.png'
 ---
 

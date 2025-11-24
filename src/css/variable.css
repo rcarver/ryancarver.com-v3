@@ -1,8 +1,9 @@
 :root {
-    --accent: #0074d9;
-    --background: #ccccccc;
-    --color: rgb(41, 41, 41);
-    --color-80: rgba(41, 41, 41, 0.8);
-    --color-30: rgba(41, 41, 41, 0.3);
-    --color-10: rgba(41, 41, 41, 0.1);
+    --accent: #FFA172;
+    --background: #2E3947;
+    --color: #e8eaed;
+    --color-80: rgba(232, 234, 237, 0.8);
+    --color-30: rgba(232, 234, 237, 0.3);
+    --color-10: rgba(232, 234, 237, 0.1);
+    --border-color: rgba(232, 234, 237, 0.15);
 }

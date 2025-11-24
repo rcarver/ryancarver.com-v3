@@ -2,27 +2,19 @@
 layout: base
 ---
 
-<header class="hero">
-  <div class="hero-content">
-    <div class="intro">
-      {{ content | safe }}
+{% include "page-header.njk" %}
+
+<div class="home">
+  {% if posts %}
+    <div class="home__posts">
+      {% for post in posts %}
+        <article class="home__post">
+          <h2 class="home__post-title">{{ post.title }}</h2>
+          <p class="home__post-content">{{ post.content }}</p>
+        </article>
+      {% endfor %}
     </div>
+  {% endif %}
 
-    {% if site.socialLinks %}
-      <ul class="hero__social-links">
-        {% for item in site.socialLinks %}
-          {% set externalAttribute = '' %}
-
-          {% if item.external %}
-            {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-          {% endif %}
-
-          <li>
-            <a href="{{ item.url | url }}" {{ externalAttribute | safe }}>{{ item.text }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
-
-</header>
+  {{ content | safe }}
+</div>

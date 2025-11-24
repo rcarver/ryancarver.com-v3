@@ -8,9 +8,6 @@
 
     {% bundledcss %}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-
     <title>
       {{  title  | escape }}
       {% if title %}
@@ -58,89 +55,66 @@
   <body>
     <div class="layout-wrapper">
 
-      <header class="header">
-        <div class="header__content">
-          <h1 class="site-title">
-            <a href={{ "/" | url }}>
-              {{site.name}}
-            </a>
-          </h1>
-
-          {% if site.headerLinks %}
-            <nav class="nav">
-              <ul class="nav__list">
-                {% for item in site.headerLinks %}
-                  {% set currentAttribute = '' %}
-                  {% set externalAttribute = '' %}
-
-                  {% if item.external %}
-                    {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                  {% endif %}
-
-                  {% if page.url == item.url %}
-                    {% set currentAttribute = 'aria-current="page"' %}
-                  {% endif %}
-
-                  <li class="nav-item">
-                    <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </nav>
-
-          {% endif %}
-
-        </div>
-      </header>
-
       <main class="main">
         {{ content | safe }}
       </main>
 
       <footer class="footer">
         <div class="footer__content">
-
-          <ul class="hero__social-links">
+          <div class="footer__left">
             {% if site.socialLinks %}
-              {% for item in site.socialLinks %}
-                {% set externalAttribute = '' %}
-
-                {% if item.external %}
-                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                {% endif %}
-
-                <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
-                </li>
-              {% endfor %}
+              <div class="footer__column">
+                <h3 class="footer__column-title">Social</h3>
+                <ul class="footer__links">
+                  {% for item in site.socialLinks %}
+                    {% set externalAttribute = '' %}
+                    {% if item.external %}
+                      {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                    {% endif %}
+                    <li>
+                      <a href="{{ item.url | url }}" {{ externalAttribute | safe }}>{{ item.text }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
             {% endif %}
 
-            {% if site.footerLinks %}
-
-              {% for item in site.footerLinks %}
-                {% set externalAttribute = '' %}
-
-                {% if item.external %}
-                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                {% endif %}
-
-                <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
-                </li>
-              {% endfor %}
+            {% if site.workLinks %}
+              <div class="footer__column">
+                <h3 class="footer__column-title">Work</h3>
+                <ul class="footer__links">
+                  {% for item in site.workLinks %}
+                    {% set externalAttribute = '' %}
+                    {% if item.external %}
+                      {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                    {% endif %}
+                    <li>
+                      <a href="{{ item.url | url }}" {{ externalAttribute | safe }}>{{ item.text }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
             {% endif %}
-          </ul>
+          </div>
 
-          {% if site.showFooterAttribution %}
-            <p class="footer__attribution">
-               Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty</a>
-            </p>
+          {% if site.footerLinks %}
+            <div class="footer__right">
+              <ul class="footer__links">
+                {% for item in site.footerLinks %}
+                  {% set externalAttribute = '' %}
+                  {% if item.external %}
+                    {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                  {% endif %}
+                  <li>
+                    <a href="{{ item.url | url }}" {{ externalAttribute | safe }}>{{ item.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           {% endif %}
-
         </div>
-      </div>
-
-    </footer>
+      </footer>
+    </div>
 
     {% bundledjs %}
   </body>
